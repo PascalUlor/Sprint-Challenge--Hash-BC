@@ -25,13 +25,12 @@ def proof_of_work(last_proof):
     start = timer()
 
     print("Searching for next proof")
-    proof = 0
+    proof = 1000000000
     #  TODO: Your code here
     endcoded_proof = f'{last_proof}'.encode()
     guess_hash = hashlib.sha256(endcoded_proof).hexdigest()
-    proof = 0
     while valid_proof(guess_hash, proof) is False:
-        proof = random.getrandbits(32)
+        proof += random.getrandbits(32)
 
     print("Proof found: " + str(proof) + " in " + str(timer() - start))
     return proof
@@ -49,7 +48,6 @@ def valid_proof(last_hash, proof):
     # pass
     guess = f'{proof}'.encode()
     guess_hash = hashlib.sha256(guess).hexdigest()
-    print(guess_hash[:6],'======',last_hash[-6:],)
     return guess_hash[:6] == last_hash[-6:]
 
 
