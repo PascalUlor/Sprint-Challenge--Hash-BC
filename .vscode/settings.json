@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "/usr/local/opt/python/bin/python3.7",
+    "python.pythonPath": "/Users/lambda/.local/share/virtualenvs/bc-sprint-RzDap4pQ/bin/python",
     "workbench.colorCustomizations": {
         "activityBar.background": "#242E3C",
         "titleBar.activeBackground": "#334054",
